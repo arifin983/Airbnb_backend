@@ -18,7 +18,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get("DEBUG",default=0))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = [
+    'localhost',  # This is for local development
+    '127.0.0.1',  # This is also for local development
+    'airbnbbackend-production.up.railway.app',  # Add your Railway domain here
+]
 
 AUTH_USER_MODEL = "useraccount.User"
 
