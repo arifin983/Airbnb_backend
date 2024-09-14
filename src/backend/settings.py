@@ -19,8 +19,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = bool(os.environ.get("DEBUG",default=0))
 
 ALLOWED_HOSTS = [
-    'localhost',  # This is for local development
-    '127.0.0.1',  # This is also for local development
+    # 'localhost',  # This is for local development
+    # '127.0.0.1',  # This is also for local development
     'airbnbbackend-production.up.railway.app',  # Add your Railway domain here
 ]
 
