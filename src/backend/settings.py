@@ -3,32 +3,43 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 
-load_dotenv()
+# Define the base directory for the project (two levels up from settings.py)
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# Path to the .env.dev file
+dotenv_path = BASE_DIR / '.env.dev'
 
+# Load environment variables from .env.dev
+load_dotenv(dotenv_path)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get("DEBUG",default=0))
+if DEBUG:
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "airbnbbackend-production.up.railway.app"]
+else:
+    ALLOWED_HOSTS = ["airbnbbackend-production.up.railway.app"]
+
+AUTH_USER_MODEL = 'useraccount.User'
+
+SITE_ID = 1
+
+if DEBUG:
+    WEBSITE_URL = 'http://localhost:8000'
+else:
+    WEBSITE_URL = 'https://airbnbbackend-production.up.railway.app'
+
+
 
 ALLOWED_HOSTS = [
-    # 'localhost',  # This is for local development
-    # '127.0.0.1',  # This is also for local development
+     'localhost',  # This is for local development
+     '127.0.0.1',  # This is also for local development
     'airbnbbackend-production.up.railway.app',  # Add your Railway domain here
 ]
 
 AUTH_USER_MODEL = "useraccount.User"
 
 SITE_ID = 1 
-
-WEBSITE_URL = "http://localhost:8000"
 
 CHANNEL_LAYERS = {
     'default': {
@@ -78,6 +89,13 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
 ]
+CORS_ORIGINS_WHITELIST = [
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:3000',
+    'https://airbnbbackend-production.up.railway.app'
+   
+]
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -92,6 +110,7 @@ REST_AUTH = {
 
 INSTALLED_APPS = [
     'daphne',
+    "channels",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -145,7 +164,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+#WSGI_APPLICATION = 'backend.wsgi.application'
 ASGI_APPLICATION = 'backend.asgi.application'
 
 
@@ -171,7 +190,7 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/5.1/re/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
