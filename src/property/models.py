@@ -25,7 +25,6 @@ class  Property(models.Model):
   created_at = models.DateTimeField(auto_now_add=True)
   
   def image_url(self):
-    print(f"image path:::::{settings.WEBSITE_URL}{self.image.url}")
     return f"{settings.WEBSITE_URL}{self.image.url}"
 
 
