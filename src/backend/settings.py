@@ -16,7 +16,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG", default=0)))
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "airbnbbackend-production.up.railway.app"]
+ALLOWED_HOSTS = [
+    "localhost", 
+    "127.0.0.1",
+    "https://airbnb-alpha-pink.vercel.app",
+    "airbnbbackend-production.up.railway.app"
+    ]
 
 
 AUTH_USER_MODEL = 'useraccount.User'
@@ -73,6 +78,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
+     "https://airbnb-alpha-pink.vercel.app",
     "http://airbnbbackend-production.up.railway.app",
     
 ]
@@ -81,6 +87,7 @@ CSRF_TRUSTED_ORIGINS = [
    # 'https://your-other-domain.com'  # Include other domains if necessary
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
+    "https://airbnb-alpha-pink.vercel.app"
 ]
 
 
