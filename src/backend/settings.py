@@ -31,12 +31,6 @@ else:
 
 
 
-ALLOWED_HOSTS = [
-     'localhost',  # This is for local development
-     '127.0.0.1',  # This is also for local development
-    'airbnbbackend-production.up.railway.app',  # Add your Railway domain here
-]
-
 AUTH_USER_MODEL = "useraccount.User"
 
 SITE_ID = 1 
@@ -89,12 +83,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
 ]
-CORS_ORIGINS_WHITELIST = [
-    'http://127.0.0.1:8000',
-    'http://127.0.0.1:3000',
-    'https://airbnbbackend-production.up.railway.app'
-   
-]
+
 
 
 CORS_ALLOW_ALL_ORIGINS = True
