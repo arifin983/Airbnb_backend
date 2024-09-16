@@ -13,8 +13,11 @@ dotenv_path = BASE_DIR / '.env.dev'
 load_dotenv(dotenv_path)
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = os.environ.get("DEBUG",default=0)
+print("debug:::",DEBUG)
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get("DEBUG",default=0))
+DEBUG = bool(int(os.environ.get("DEBUG", default=0)))
+print("debug:::", DEBUG)
 if DEBUG:
     ALLOWED_HOSTS = ["localhost", "127.0.0.1", "airbnbbackend-production.up.railway.app"]
 else:
