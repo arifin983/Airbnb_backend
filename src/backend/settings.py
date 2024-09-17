@@ -19,10 +19,9 @@ DEBUG = bool(int(os.environ.get("DEBUG", default=0)))
 ALLOWED_HOSTS = [
     "localhost", 
     "127.0.0.1",
-    "https://airbnb-alpha-pink.vercel.app",
+    "airbnb-alpha-pink.vercel.app",
     "airbnbbackend-production.up.railway.app"
-    ]
-
+]
 
 AUTH_USER_MODEL = 'useraccount.User'
 
@@ -78,7 +77,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
-     "https://airbnb-alpha-pink.vercel.app",
+    "https://airbnb-alpha-pink.vercel.app",
     "http://airbnbbackend-production.up.railway.app",
     
 ]
