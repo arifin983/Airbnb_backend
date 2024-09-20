@@ -19,7 +19,7 @@ DEBUG = bool(int(os.environ.get("DEBUG", default=0)))
 ALLOWED_HOSTS = [
     "localhost", 
     "127.0.0.1",
-    "66eda992f20b6d255a809852--arifbnb.netlify.app/",
+    "arifbnb.netlify.app",
     "airbnbbackend-production.up.railway.app"
 ]
 
@@ -80,7 +80,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
-    "https://66eda992f20b6d255a809852--arifbnb.netlify.app",
+    "https://arifbnb.netlify.app",
     "http://airbnbbackend-production.up.railway.app",
     
 ]
@@ -89,7 +89,7 @@ CSRF_TRUSTED_ORIGINS = [
    # 'https://your-other-domain.com'  # Include other domains if necessary
     'http://127.0.0.1:8000',
     'http://127.0.0.1:3000',
-    "https://66eda992f20b6d255a809852--arifbnb.netlify.app"
+    "https://arifbnb.netlify.app"
 ]
 
 
