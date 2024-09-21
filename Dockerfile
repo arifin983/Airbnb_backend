@@ -38,8 +38,7 @@ RUN pip install -r /tmp/requirements.txt
 # Copy the project code into the container
 COPY ./src /code
 
-# Set Redis as the channel layer backend
-ENV REDIS_URL=redis://localhost:6379/0  
+
 # You will override this in Railway using the actual Redis instance
 
 # Create a script to run migrations and start the server
