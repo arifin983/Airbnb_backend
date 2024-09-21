@@ -79,6 +79,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
+    'http://127.0.0.1:8080',
     'http://127.0.0.1:3000',
     "https://arifbnb.netlify.app",
     "http://airbnbbackend-production.up.railway.app",
@@ -88,6 +89,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://airbnbbackend-production.up.railway.app',
    # 'https://your-other-domain.com'  # Include other domains if necessary
     'http://127.0.0.1:8000',
+    'http://127.0.0.1:8080',
     'http://127.0.0.1:3000',
     "https://arifbnb.netlify.app"
 ]
