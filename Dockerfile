@@ -45,7 +45,7 @@ COPY ./src /code
 RUN printf "#!/bin/bash\n" > ./paracord_runner.sh && \
     printf "RUN_PORT=\"\${PORT:-8000}\"\n\n" >> ./paracord_runner.sh && \
     printf "python manage.py migrate --no-input\n" >> ./paracord_runner.sh && \
-    printf "daphne -b 0.0.0.0 -p \$RUN_PORT backend.asgi:application\n" >> ./paracord_runner.sh
+    printf "daphne\$RUN_PORT backend.asgi:application\n" >> ./paracord_runner.sh
 
 # Make the bash script executable
 RUN chmod +x paracord_runner.sh
