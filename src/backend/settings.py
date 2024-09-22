@@ -40,11 +40,8 @@ SITE_ID = 1
 
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-           'hosts': [os.environ.get('REDIS_URL')],
-        },
-    },
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
 }
 
 SIMPLE_JWT = {
