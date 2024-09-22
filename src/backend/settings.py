@@ -19,7 +19,7 @@ DEBUG = bool(int(os.environ.get("DEBUG", default=0)))
 ALLOWED_HOSTS = [
     "localhost", 
     "127.0.0.1",
-    "arifbnb.netlify.app",
+    "airbnbclone-production-e41f.up.railway.app",
     "airbnbbackend-production.up.railway.app"
 ]
 
@@ -78,7 +78,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:8080',
     'http://127.0.0.1:3000',
-    "https://arifbnb.netlify.app",
+    "https://airbnbclone-production-e41f.up.railway.app",
     "http://airbnbbackend-production.up.railway.app",
     
 ]
@@ -88,7 +88,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://127.0.0.1:8080',
     'http://127.0.0.1:3000',
-    "https://arifbnb.netlify.app"
+    "https://airbnbclone-production-e41f.up.railway.app"
 ]
 
 
